@@ -1,22 +1,116 @@
-.App {
-  text-align: center;
+.body {
+  background-image: url("https://t4.ftcdn.net/jpg/02/17/75/55/240_F_217755550_tR9gI6ZZOzJRSc2lIzlZoU3YiRXPfI2P.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.frame-selection button {
-  margin: 10px;
-  padding: 10px;
-  background-color: #000;
-  color: #fff;
-  border: none;
+.container-fluid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-items: center; */
+  margin-top: 30px;
+}
+
+.frame-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* align-items: center; */
+  width: 100%;
+  /* text-align: center; */
+}
+
+.frame-thumbnail {
   cursor: pointer;
+  margin: 10px;
+  width: 200px;
+  height: 300px;
+  object-fit: contain;
+  border: 1px solid red;
 }
 
-.camera {
-  margin: 20px 0;
+.camera-container {
+  position: relative;
+  width: 300px;
+  height: auto;
+  align-items: center;
 }
 
-.photo-frame {
-  margin: 20px auto;
-  border: 10px solid #000;
-  display: inline-block;
+.frame-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 20px; */
+  width: 40%;
+}
+
+.frame-preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  max-height: 400px;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(201, 45, 45) transparent;
+}
+
+.frame-preview-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.frame-preview-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.frame-preview-container::-webkit-scrollbar-thumb {
+  background-color: #8f0c19;
+  border-radius: 10px;
+}
+
+.frame-preview-container::-webkit-scrollbar-thumb:hover {
+  background-color: darkred;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .container-fluid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .upload-btn{
+align-items: center;
+  }
+  .frame-container {
+    flex-direction: column;
+    align-items: center;
+  width: 100%;
+  text-align: center;
+  }
+
+  .preview {
+    margin-top: 150px;
+  }
+
+  .frame-preview {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .frame-preview-container {
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    max-height: unset;
+    width: 100%;
+  }
+
+  .frame-thumbnail {
+    width: 150px;
+    height: auto;
+  }
 }
